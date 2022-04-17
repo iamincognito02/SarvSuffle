@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div CLASS="container">
+        <h1>see all the students</h1>
+        <br/>
+        <form action="/students" METHOD="POST">
+            <input type="text" placeholder="name" name="name">
+            <input type="submit" value="add student" clas="btn btn-secondary">
+        </form>
+        <br/><br/>
+        {% for students in students %}
+            <h4>
+             {{students.name}}<a href="/update/{{students.id}}" class="btn btn-outline-secondary btn -sm">              update            </a>
+             <a href="/delete/{{students.id}}" class="btn btn-outline-danger btn -sm">              delete            </a>
+            </h4>
+        {% endfor %}
+    </div>
+{% endblock %}
