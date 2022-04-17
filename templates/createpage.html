@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% include 'header.html' %}
+ 
+ 
+ 
+{% block title %} Home {% endblock %}
+ 
+ 
+ 
+{% block body %}
+<div class="container">
+<form action='' method = "POST">
+<table class="table">
+    <tr>
+        <td>First Name</td>
+        <td><input type = "text" name = "first_name" class="form-control" /></td>
+    </tr>
+    <tr>
+        <td>Last Name</td>
+        <td><input type = "text" name = "last_name" class="form-control" /></td>
+    </tr>
+
+    <tr>
+        <td>Email</td>
+        <td><input type = "email" name = "email" class="form-control" /></td>
+    </tr>
+
+    <tr>
+        <td>Password</td>
+        <td><input type = "password" name = "password" class="form-control" /></td>
+    </tr>
+
+    <tr>
+        <td>Gender</td>
+        <td>
+        Male: <input type = "radio" name = "gender"  value="male"/>
+         Female: <input type = "radio" name = "gender"  value="female"/>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Hobbies</td>
+        <td>
+            Cricket : <input type="checkbox" name="hobbies"  value="cricket">
+            Movies : <input type="checkbox"  name="hobbies"  value="cricket">
+            TV : <input type="checkbox"  name="hobbies"  value="tv">
+
+        </td>
+    </tr>
+
+
+
+    <tr>
+        <td>Country</td>
+        <td>
+        <select name="country" class="form-control">
+            <option value="india">India</option>
+            <option value="usa">USA</option>
+            <option value="australia">Australia</option>
+         </select>
+        </td>
+    </tr>
+    
+
+    <tr>
+        <td colspan="2">
+            <input type="submit" name="submit" value="submit" class="btn btn-warning">
+        </td>
+       
+    </tr>
+</table>
+  
+  </form>
+
+</div>
+{% endblock %}
+
+
