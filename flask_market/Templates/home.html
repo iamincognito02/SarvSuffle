@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title%}
+ home page
+ {% endblock %}
+
+ {% block content %}
+ <div class="postion-relative overflow-hidden p-3 p-md-5 mmd-e tect-center bg-dark" style="color:white">
+    <div class="col-md-5 p-lg-5 mx-auto my-5">
+        <h1 class="display-4 font-weight-notmal">Shiv's first website</h1>
+        <p class="lead font-weight-normal">Start purchasing the items by clicking on the link below</p>
+        <a class="btn btn-primary" href="{{url_for('market')}}">Get started</a>
+    </div>
+    <div class="product-device box-shadow d-none d-md-block"></div>
+    <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
+</div>
+ {% endblock %}

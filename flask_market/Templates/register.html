@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}
+Register page
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <div class="container">
+        <form method="POST" class="form-register" color:white>
+            {{form.hidden_tag()}}
+            <img class="mb-4" src="https://wallpapercave.com/wp/wp2963505.jpg" width=300 alt="">
+            <h1 class="h3 mb-3 font-weight-normal">
+                Please create your account
+            </h1>
+            <br>
+            {{form.Username.label()}}
+            {{form.Username(class="form-control",placeholder="user Name")}}
+
+            {{form.email_address.label()}}
+            {{form.email_address(class="form-control",placeholder="Email address")}}
+
+            {{form.passward1.label()}}
+            {{form.passward1(class="form-control",placeholder="passward")}}
+
+            {{form.passward2.label()}}
+            {{form.passward2(class="form-control",placeholder="confirm passward")}}
+            <br>
+
+            <div class="checkbox mb-3">
+                <h6>Already have an account?</h6>
+                <a class="btn btn-sm btn-secondary" href="{{url_for('login')}}">Login</a>
+            </div>
+
+            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+        </form>
+    </div>6
+</body>
+{% endblock %}
