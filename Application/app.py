@@ -8,10 +8,10 @@ db = SQLAlchemy(app)
 
 
 class Eminfo(db.Model):
-    SrNo = db.Column(db.Integer, primary_key=True)
+    SrNo = db.Column(db.Integer, primary_key=True, nullable=False)
     employee_id = db.Column(db.String(200), nullable=False)
     name = db.Column(db.String(200), nullable=False)
-    age = db.Column(db.Integer)
+    DOB = db.Column(db.String)
 
     def __repr__(self) -> str:
         return f"{self.SrNo} - {self.name}"
@@ -22,8 +22,8 @@ def empinfo():
     if request.method == 'POST':
         employee_id = request.form['employee_id']
         name = request.form['name']
-        age = request.form['age']
-        employee = Eminfo(employee_id=employee_id, name=name, age=age)
+        DOB = request.form['DOB']
+        employee = Eminfo(employee_id=employee_id, name=name, DOB=DOB)
         db.session.add(employee)
         db.session.commit()
     employees = Eminfo.query.all()
@@ -48,11 +48,11 @@ def update(SrNo):
     if request.method == 'POST':
         employee_id = request.form['employee_id']
         name = request.form['name']
-        age = request.form['age']
+        DOB = request.form['DOB']
         employee = Eminfo.query.filter_by(SrNo=SrNo).first()
         employee.employee_id = employee_id
         employee.name = name
-        employee.age = age
+        employee.DOB = DOB
         db.session.add(employee)
         db.session.commit()
         return redirect('/')

@@ -43,7 +43,7 @@
                 <th scope="col">SrNo</th>
                 <th scope="col">Employee's ID</th>
                 <th scope="col">Employee's Name</th>
-                <th scope="col">Employee's Age</th>
+                <th scope="col">Employee's DOB</th>
                 <th scope="col">Edit</th>
             </tr>
         </thead>
@@ -53,7 +53,7 @@
                 <th scope="row">{{loop.index}}</th>
                 <td>{{employee.employee_id}}</td>
                 <td>{{employee.name}}</td>
-                <td>{{employee.age}}</td>
+                <td>{{employee.DOB}}</td>
                 <td>
                     <a href="/Update/{{employee.SrNo}}" type="button"
                         class="btn btn-outline-info btn-sm mx-1">Update</button>
